@@ -9,7 +9,7 @@ ORDER BY Date DESC
 -- Joining tables together
 SELECT Top 100 * FROM StoreData..SalesData AS s
 JOIN StoreData..FeaturesData AS f
-ON s.Store = f.Store
+	ON s.Store = f.Store
 
 -- Average unemployment based on store
 SELECT Top 100 s.store, AVG(f.Unemployment) AS StoreUnemployment
@@ -29,7 +29,7 @@ ORDER BY DeptUnemployment DESC
 
 -- Trying to see if the size of a store has an effect on unemployment
 SELECT Top 10 s.store, AVG(sd.size) AS StoreSize, 
-AVG(f.Unemployment) AS StoreUnemployment
+	AVG(f.Unemployment) AS StoreUnemployment
 FROM StoreData..SalesData AS s
 JOIN StoreData..FeaturesData AS f
 	ON s.Store = f.Store
@@ -51,7 +51,7 @@ ORDER BY StoreWeeklySales DESC
 
 -- Trying to see if fuel prices have an effect on sales
 SELECT Top 15 s.store, AVG(s.Weekly_Sales) AS AvgWeeklySales, 
-AVG(f.Fuel_Price) AS AvgFuelPrice
+	AVG(f.Fuel_Price) AS AvgFuelPrice
 FROM StoreData..SalesData AS s
 JOIN StoreData..FeaturesData AS f
 	ON s.Store = f.Store
